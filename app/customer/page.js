@@ -20,7 +20,7 @@ function CustomerList() {
 
   return (
     <div>
-      <h1>Customer List</h1>
+      <h1 className="p-5 font-bold">Customer List</h1>
       <ul>
         {customers.map((customer) => (
           <li key={customer._id}>
@@ -59,8 +59,9 @@ function AddCustomer({ setCustomers }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="flex flex-col mt-10 gap-5 px-5" onSubmit={handleSubmit}>
       <input
+        className="border border-black p-2 w-48 hover:rounded-full"
         type="text"
         placeholder="Name"
         value={formData.name}
@@ -68,6 +69,7 @@ function AddCustomer({ setCustomers }) {
         required
       />
       <input
+        className="border border-black p-2 w-48 hover:rounded-full"
         type="date"
         placeholder="Date of Birth"
         value={formData.dateOfBirth}
@@ -77,6 +79,7 @@ function AddCustomer({ setCustomers }) {
         required
       />
       <input
+        className="border border-black p-2 w-48 hover:rounded-full"
         type="number"
         placeholder="Member Number"
         value={formData.memberNumber}
@@ -86,6 +89,7 @@ function AddCustomer({ setCustomers }) {
         required
       />
       <input
+        className="border border-black p-2 w-48 hover:rounded-full"
         type="text"
         placeholder="Interests"
         value={formData.interests}
@@ -94,7 +98,12 @@ function AddCustomer({ setCustomers }) {
         }
         required
       />
-      <button type="submit">Add Customer</button>
+      <button
+        className="w-16 h-10 rounded-full bg-green-700 text-white font-bold"
+        type="submit"
+      >
+        Add
+      </button>
     </form>
   );
 }

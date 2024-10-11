@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -17,7 +18,7 @@ export default function CustomerDetail() {
   if (!customer) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="gap-2 px-5">
       <h1>{customer.name}</h1>
       <p>Date of Birth: {new Date(customer.dateOfBirth).toDateString()}</p>
       <p>Member Number: {customer.memberNumber}</p>
